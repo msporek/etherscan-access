@@ -9,8 +9,7 @@ Functionalities implemented:
 
 Dependencies: 
 -
-- Typescript
-- Axios
+- Axios for HTTP requests. 
 
 Sample usage (Typescript): 
 -
