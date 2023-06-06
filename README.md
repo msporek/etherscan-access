@@ -7,6 +7,13 @@ Functionalities implemented:
 - Call ```Account.getBalance(address: string)``` to get Ether balance of a single Ethereum account (Ethereum mainnet).
 - Call ```Account.getBalances(addresses: string[])``` to get Ether balance of multiple Ethereum accounts (Ethereum mainnet).
 
+**Contract class:** 
+- Call ```Contract.getABI(address: string)``` to get ABI of Ethereum contract (Ethereum mainnet).
+- Call ```Contract.getCode(address: string)``` to get source code of a verified of Ethereum contract (Ethereum mainnet).
+
+**Transaction class:** 
+- Call ```Transaction.getStatus(txhash: string)``` to get status of Ethereum transaction of a particular hash (Ethereum mainnet).
+
 Dependencies: 
 -
 - Axios for HTTP requests. 
