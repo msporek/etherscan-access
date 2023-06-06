@@ -1,7 +1,8 @@
 import { IAccount, Account } from "./Account";
 import { IContract, Contract } from "./Contract";
+import { ITransaction, Transaction } from "./Transaction";
 
-let apiKey: string = "<Your API Key>";
+let apiKey: string = "<Your Etherscan API key>";
 
 let account: IAccount = new Account(apiKey);
 
@@ -17,4 +18,14 @@ let contract: IContract = new Contract(apiKey);
 contract.getABI(ethAddress)
     .then((abi) => { 
         console.log(`ABI of contract at address ${ ethAddress } is: ${ abi }.`);
+    });
+
+let transaction: ITransaction = new Transaction(apiKey);
+
+let txthash: string = '0x8e32028a02aaf037526df9ba13c309623b52a1178e70dd30479c983d6e164c98';
+
+transaction.getStatus(txthash)
+    .then((status) => { 
+        console.log(`Status of transaction of hash ${ txthash } is:`);
+        console.dir(status);
     });
