@@ -21,8 +21,19 @@ Dependencies:
 Sample usage (Typescript): 
 -
 ``` 
-account.getBalance('0x6b75d8af000000e20b7a7ddf000ba900b4009a80')
+account.getBalance('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae')
     .then((balance) => {
-        // Handle the returned balance here. 
+        // Handle the returned account balance here. 
     });
+
+contract.getABI('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae')
+    .then((abi) => { 
+        // Handle the returned ABI here. 
+    });
+    
+transaction.getStatus('0x8e32028a02aaf037526df9ba13c309623b52a1178e70dd30479c983d6e164c98')
+    .then((status) => { 
+        // Handle the returned transaction status here. 
+    });
+
 ```
