@@ -1,5 +1,5 @@
 # etherscan-access
-A Typescript module for accessing Etherscan API to get information about accounts, contracts and transactions on the Ethereum blockchain (Ethereum mainnet).
+Typescript module for accessing Etherscan API to get information about accounts, contracts and transactions on the Ethereum blockchain (Ethereum mainnet).
 
 Functionalities implemented: 
 - 
@@ -13,6 +13,9 @@ Functionalities implemented:
 
 **Transaction class:** 
 - Call ```Transaction.getStatus(txhash: string)``` to get status of Ethereum transaction of a particular hash.
+
+**Proxy class:**
+- Call ```Proxy.getTransactionCount(address: string)``` to get the number of transactions sent to the blockchain by the given Ethereum account address.
 
 Dependencies: 
 -
@@ -34,6 +37,11 @@ contract.getABI('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae')
 transaction.getStatus('0x8e32028a02aaf037526df9ba13c309623b52a1178e70dd30479c983d6e164c98')
     .then((status) => { 
         // Handle the returned transaction status here. 
+    });
+    
+proxy.getTransactionCount('0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326')
+    .then((transactionCount) => {
+        // Handle the returned transaction transaction count. 
     });
 
 ```
