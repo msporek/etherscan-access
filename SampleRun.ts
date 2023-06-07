@@ -1,8 +1,9 @@
 import { IAccount, Account } from "./Account";
 import { IContract, Contract } from "./Contract";
 import { ITransaction, Transaction } from "./Transaction";
+import { IProxy, Proxy } from "./Proxy";
 
-let apiKey: string = "<Your Etherscan API key>";
+let apiKey: string = "<Your Etherscan API Key here>";
 
 let account: IAccount = new Account(apiKey);
 
@@ -12,6 +13,7 @@ account.getBalance(ethAddress)
     .then((balance) => {
         console.log(`The balance of ETH address ${ ethAddress } is: ${ balance } wei.`);
     });
+
 
 let contract: IContract = new Contract(apiKey);
 
@@ -28,4 +30,11 @@ transaction.getStatus(txthash)
     .then((status) => { 
         console.log(`Status of transaction of hash ${ txthash } is:`);
         console.dir(status);
+    });
+
+let proxy: IProxy = new Proxy(apiKey);
+
+proxy.getTransactionCount('0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326')
+    .then((transactionCount) => {
+        console.log(`The number of transactions of ETH address '0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326' is: ${ transactionCount }.`);
     });
