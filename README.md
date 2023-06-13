@@ -57,3 +57,17 @@ proxy.eth_getBlockByNumber('0xC63276')
     });
 
 ```
+
+```
+let balance = await account.getBalance('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae');
+
+let abi = await contract.getABI('0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae')
+
+let status = await transaction.getStatus('0x8e32028a02aaf037526df9ba13c309623b52a1178e70dd30479c983d6e164c98');
+
+let transactionCount = await proxy.eth_getTransactionCount('0x1f9090aaE28b8a3dCeaDf281B0F12828e676c326');
+
+let mostRecentBlock = await proxy.eth_blockNumber();
+
+let blockInfo = await proxy.eth_getBlockByNumber('0xc63276');
+```
